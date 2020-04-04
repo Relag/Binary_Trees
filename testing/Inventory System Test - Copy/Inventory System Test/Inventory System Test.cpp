@@ -9,6 +9,8 @@
 #include "MajorHealthPotion.h"
 #include "Item.h"
 
+
+
 bool CompareItem(Item* a, Item* b) {
 	return a->GetName() == b->GetName();
 }
@@ -16,16 +18,14 @@ bool CompareItem(Item* a, Item* b) {
 void AddItem (std::map<Item*, int>& map, Item* item) {
 	bool alreadyContains = false;
 	std::map<Item*, int>::iterator it = map.begin();
-	while(it != map.end()) {
-		if (CompareItem((*it).first, item)) {
+	it = map.find(item);
+		if (it != map.end()) 
 			(*it).second++;
-			alreadyContains = true;
-			break;
-		}
-		it++;
-	}
-	if (!alreadyContains)
-		map.emplace(item, 1);
+		else
+			map.emplace(item, 1);;
+	
+		map.find(item)->second;
+		
 }
 
 
@@ -40,7 +40,12 @@ int main()
 	AddItem(MInventory, healthPotion);
 	AddItem(MInventory, healthPotion2);
 	AddItem(MInventory, healthPotion3);
-	
+
+	if (*healthPotion == *healthPotion3)
+		std::cout << "true";
+	else
+		std::cout << "false";
+
 
 }
 
