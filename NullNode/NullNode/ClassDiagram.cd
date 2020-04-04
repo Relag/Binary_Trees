@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Busker" Collapsed="true">
+    <Position X="9.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAIBAA=</HashCode>
+      <FileName>Busker.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Character" Collapsed="true">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAQAAAAACAAAAAAAAAEIQABAAACAAAAAADJAA=</HashCode>
+      <FileName>Character.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemies" Collapsed="true">
+    <Position X="3.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAACBAA=</HashCode>
+      <FileName>Enemies.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Friendlies" Collapsed="true">
+    <Position X="8.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ECAIAAAAACAAAAAAIAAAAAEAAAAAAAAAAgAAAAFABAA=</HashCode>
+      <FileName>Friendlies.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Zombie" Collapsed="true">
+    <Position X="1.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Zombie.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Goblin" Collapsed="true">
+    <Position X="4" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAIAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Goblin.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player" Collapsed="true">
+    <Position X="6" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iCACAAaAACAAAASggCaAACCRAIyAAAAgAAEAQQAAVBI=</HashCode>
+      <FileName>Player.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GateKeeper" Collapsed="true">
+    <Position X="8" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAQAAAAAAAAAAEAAAAAABAA=</HashCode>
+      <FileName>GateKeeper.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HealthPotion" Collapsed="true">
+    <Position X="18" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAgAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>HealthPotion.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Item" Collapsed="true">
+    <Position X="16.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAYAAAAAAAAAAEAAAAAAAAAARABAA=</HashCode>
+      <FileName>Item.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MajorHealthPotion" Collapsed="true">
+    <Position X="18" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MajorHealthPotion.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpellPotion" Collapsed="true">
+    <Position X="15" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAACAAABAAAA=</HashCode>
+      <FileName>SpellPotion.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
