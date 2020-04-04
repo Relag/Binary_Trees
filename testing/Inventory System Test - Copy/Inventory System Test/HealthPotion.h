@@ -10,6 +10,6 @@ public:
 protected:
 	int m_iHealthReplenish;
 	void Effect() override;
-	void Use(std::map<Item*, int>& map) override;
+	void Use(std::map<Item*, int>& map);
 };
 
