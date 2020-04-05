@@ -5,17 +5,17 @@
 //November 16: Disbanded class, moved functionality to player
 void Player::InventoryCreate() {
 	//Initialize one of each item to contain in the map
-	HealthPotion* healthPotion = new HealthPotion;
+	/*HealthPotion* healthPotion = new HealthPotion;
 	InventoryMap.emplace(healthPotion->GetName(), std::make_pair(healthPotion, 1));
 	MajorHealthPotion* majorHealthPotion = new MajorHealthPotion;
 	InventoryMap.emplace(majorHealthPotion->GetName(), std::make_pair(majorHealthPotion, 0));
 	SpellPotion* spellPotion = new SpellPotion;
-	InventoryMap.emplace(spellPotion->GetName(), std::make_pair(spellPotion, 0));
+	InventoryMap.emplace(spellPotion->GetName(), std::make_pair(spellPotion, 0));*/
 }
 
 void Player::Additem(Item* item) {
 	std::map<Item*, int>::iterator it = InventoryMap.begin();
-	//<Move the iterator to item positon or end of the map.
+	//Move the iterator to item positon or end of the map.
 	while ((*it).first->GetName() != item->GetName() && it != InventoryMap.end()) 
 		it++;
 	//If iterator is at end of map add the item as a new item, otherwise iterate the item number.
@@ -28,16 +28,26 @@ void Player::Additem(Item* item) {
 }
 
 void Player::InventoryDisplay() {
-	for (std::map<std::string, std::pair<Item*, int>>::iterator iter = 
+	for (std::map<Item*, int>::iterator iter = 
 		InventoryMap.begin(); iter != InventoryMap.end(); iter++) {
-		std::cout << iter->first << ": " << iter->second.second << std::endl;
+		std::cout << iter->first->GetName() << ": " << iter->second<< std::endl;
 	}
 }
 
 void Player::UseItem(std::string itemName) {
-	if (InventoryMap.find(itemName)->second.second > 0) {
-		InventoryMap.find(itemName)->second.first->Use(this);
-		InventoryMap.find(itemName)->second.second -= 1;
+	std::map<Item*, int>::iterator it = InventoryMap.begin();
+	while ((*it).first->GetName() != itemName && it != InventoryMap.end())
+		it++;
+	// Use item if present. Remove from map if it is the player's last item.
+	if (it == InventoryMap.end())
+		return;
+	else if ((*it).second == 1) {
+		(*it).first->Use(this);
+		InventoryMap.erase(it);
+	}
+	else {
+		(*it).first->Use(this);
+		(*it).second--;
 	}
 }
 

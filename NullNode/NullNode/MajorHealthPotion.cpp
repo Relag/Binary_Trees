@@ -1,4 +1,4 @@
-#include "MajorHealthPotion.h"#include "MajorHealthPotion.h"
+#include "MajorHealthPotion.h"
 
 MajorHealthPotion::MajorHealthPotion() {
 	m_Description = "A red vial that teems with life.";
