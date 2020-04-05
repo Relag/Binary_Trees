@@ -21,4 +21,8 @@ MajorHealthPotion::MajorHealthPotion() {
 	 }
  }
 
+ Item* MajorHealthPotion::copy() {
+	 Item* potion = new MajorHealthPotion;
+	 return potion;
+ }
  

@@ -19,3 +19,8 @@ void HealthPotion::Use(std::map<Item*, int>& map) {
 		std::cout << "Your vial is empty.\n";
 	}
 }
+
+Item* HealthPotion::copy(){
+	Item* potion = new HealthPotion;
+	return potion;
+}
