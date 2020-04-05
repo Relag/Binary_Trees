@@ -19,7 +19,7 @@ void Player::Additem(Item* item) {
 	while ((*it).first->GetName() != item->GetName() && it != InventoryMap.end()) 
 		it++;
 	//If iterator is at end of map add the item as a new item, otherwise iterate the item number.
-	if (it != InventoryMap.end())
+	if (it == InventoryMap.end())
 		InventoryMap.emplace(item, 1);
 	else
 		(*it).second++;

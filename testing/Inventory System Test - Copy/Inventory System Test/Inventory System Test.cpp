@@ -9,7 +9,7 @@
 #include "MajorHealthPotion.h"
 #include "Item.h"
 
-
+std::map<Item*, int> InventoryMap;
 
 bool CompareItem(Item* a, Item* b) {
 	return a->GetName() == b->GetName();
@@ -28,6 +28,20 @@ void AddItem (std::map<Item*, int>& map, Item* item) {
 		
 }
 
+void AddItem(Item* item) {
+	std::map<Item*, int>::iterator it = InventoryMap.begin();
+	//Move the iterator to item positon or end of the map.
+	while (it != InventoryMap.end() && (*it).first->GetName() != item->GetName())
+		it++;
+	//If iterator is at end of map add the item as a new item, otherwise iterate the item number.
+	if (it == InventoryMap.end())
+		InventoryMap.emplace(item, 1);
+	else
+		(*it).second++;
+
+	delete item;
+}
+
 
 
 int main()
@@ -42,11 +56,13 @@ int main()
 	AddItem(MInventory, healthPotion3);
 
 	if (*healthPotion == *healthPotion3)
-		std::cout << "true";
+		std::cout << "true\n\n";
 	else
-		std::cout << "false";
+		std::cout << "false\n\n";
 
+	AddItem(healthPotion);
 
+	healthPotion->GetName();
 }
 
 

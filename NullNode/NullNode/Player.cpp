@@ -175,6 +175,10 @@ void Player::Shop(bool& isNight) {
 	InventoryDisplay();
 	std::cout << "What would you like to buy?";
 
+	HealthPotion* healthPotion = new HealthPotion;
+	MajorHealthPotion* majorHealthPotion = new MajorHealthPotion;
+	SpellPotion* spellPotion = new SpellPotion;
+
 	switch (cDirection = _getch()) {
 	case 72:	//Up Arrow
 		if (m_Position.iX > 0)
@@ -194,15 +198,15 @@ void Player::Shop(bool& isNight) {
 		break;
 	case 104:
 		if(SpendMoney(1))
-			Additem("(H)ealth Potion");
+			Additem(healthPotion);
 		break;
 	case 109:
 		if (SpendMoney(2))
-			Additem("(M)ajor Health Potion");
+			Additem(majorHealthPotion);
 		break;
 	case 115:
 		if (SpendMoney(1))
-			Additem("(S)pell Potion");
+			Additem(spellPotion);
 		break;
 	}
 }
