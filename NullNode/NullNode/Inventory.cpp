@@ -13,8 +13,18 @@ void Player::InventoryCreate() {
 	InventoryMap.emplace(spellPotion->GetName(), std::make_pair(spellPotion, 0));
 }
 
-void Player::Additem(std::string name) {
-	InventoryMap.find(name)->second.second++;
+void Player::Additem(Item* item) {
+	std::map<Item*, int>::iterator it = InventoryMap.begin();
+	//<Move the iterator to item positon or end of the map.
+	while ((*it).first->GetName() != item->GetName() && it != InventoryMap.end()) 
+		it++;
+	//If iterator is at end of map add the item as a new item, otherwise iterate the item number.
+	if (it != InventoryMap.end())
+		InventoryMap.emplace(item, 1);
+	else
+		(*it).second++;
+	
+	delete item;
 }
 
 void Player::InventoryDisplay() {

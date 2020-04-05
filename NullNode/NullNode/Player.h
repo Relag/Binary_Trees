@@ -32,7 +32,8 @@ private:
 	int m_Experience;
 	
 
-	std::map<std::string, std::pair<Item*, int>> InventoryMap;
+	std::map<std::string, std::pair<Item*, int>> OldInventoryMap;
+	std::map<Item*, int> InventoryMap;
 public:
 	Player();
 	//Currencies
@@ -61,7 +62,7 @@ public:
 	Node* DungeonMove(Node* position, bool &hubGameState);
 	
 	//Inventory
-	void Additem(std::string name);
+	void Additem(Item*item);
 	void UseItem(std::string itemName);
 	void InventoryDisplay();
 	void InventoryCreate();
