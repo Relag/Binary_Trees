@@ -13,6 +13,7 @@ public:
 	virtual void Use(Character* player) = 0;
 	std::string GetName() { return m_Name; }
 	int GetRemaining() { return numberRemaining; }
+	bool operator==(Item& pickup);
 protected:
 	std::string m_Description;
 	std::string m_Name;
