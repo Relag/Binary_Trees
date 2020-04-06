@@ -9,3 +9,8 @@ MajorHealthPotion::MajorHealthPotion() {
 void MajorHealthPotion::Use(Character* player) {
 	HealthPotion::Use(player);
 }
+
+Item* MajorHealthPotion::Copy() {
+	Item* item = new MajorHealthPotion;
+	return item;
+}

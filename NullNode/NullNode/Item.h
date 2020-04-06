@@ -14,6 +14,7 @@ public:
 	std::string GetName() { return m_Name; }
 	int GetRemaining() { return numberRemaining; }
 	bool operator==(Item& pickup);
+	virtual Item* Copy() = 0;
 protected:
 	std::string m_Description;
 	std::string m_Name;

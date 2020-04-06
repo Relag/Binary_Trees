@@ -8,3 +8,8 @@ SpellPotion::SpellPotion() {
 void SpellPotion::Use(Character* player) {
 	player->ReplenishMagic(m_MagicReplenish);
 }
+
+Item* SpellPotion::Copy() {
+	Item* item = new SpellPotion;
+	return item;
+}

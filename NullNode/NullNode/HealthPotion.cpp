@@ -9,5 +9,9 @@ HealthPotion::HealthPotion() {
 void HealthPotion::Use(Character* player) {
 	//Pass a negative value to GetHit, to heal player.
 	player->Heal(m_HealthReplenish);
+}
 
+Item* HealthPotion::Copy() {
+	Item* item = new HealthPotion;
+	return item;
 }

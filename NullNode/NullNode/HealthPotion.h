@@ -9,7 +9,7 @@ class HealthPotion : public Item
 {
 public:
 	HealthPotion();
-
+	Item* Copy();
 	void Use(Character* player);
 protected:
 	int m_HealthReplenish;
