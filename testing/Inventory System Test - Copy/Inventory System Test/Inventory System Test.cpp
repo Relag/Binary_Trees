@@ -35,10 +35,11 @@ void AddItem(Item* item) {
 		it++;
 	//If iterator is at end of map add the item as a new item, otherwise iterate the item number.
 	if (it == InventoryMap.end())
-		InventoryMap.emplace(item, 1);
-	else
-		(*it).second++;
 
+		InventoryMap.emplace(item->copy(), 1);
+	else {
+		(*it).second++;
+	}
 	delete item;
 }
 
@@ -61,8 +62,16 @@ int main()
 		std::cout << "false\n\n";
 
 	AddItem(healthPotion);
+	AddItem(healthPotion2);
 
-	healthPotion->GetName();
+	healthPotion = new HealthPotion;
+	AddItem(healthPotion);
+
+	//healthPotion->GetName();
+	//std::cout << InventoryMap.find(healthPotion)->first->GetName() << " : " << InventoryMap.find(healthPotion)->second;
+
+	std::map<Item*, int>::iterator it = InventoryMap.begin();
+	std::cout << (*it).first->GetName() << " : " << (*it).second;
 }
 
 

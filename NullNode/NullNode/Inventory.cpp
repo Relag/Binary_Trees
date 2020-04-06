@@ -21,9 +21,9 @@ void Player::Additem(Item* item) {
 	//If iterator is at end of map add the item as a new item, otherwise iterate the item number.
 	if (it == InventoryMap.end())
 		InventoryMap.emplace(item, 1);
-	else
+	else {
 		(*it).second++;
-	
+	}
 	delete item;
 }
 
