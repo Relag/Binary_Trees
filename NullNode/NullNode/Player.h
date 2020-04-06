@@ -67,6 +67,7 @@ public:
 	void InventoryDisplay();
 	void InventoryCreate();
 	void OpenInventory(Character* enemy, Character* player);
+	int AmountofItem(std::string name);
 	//Talking to NPCs
 	void Tip(Friendlies* npc);
 	void Shop(bool& isNight);

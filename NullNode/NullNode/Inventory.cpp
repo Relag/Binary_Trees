@@ -35,9 +35,20 @@ void Player::InventoryDisplay() {
 	}
 }
 
+int Player::AmountofItem(std::string name) {
+	std::map<Item*, int>::iterator iter;
+	iter = InventoryMap.begin();
+	while (iter != InventoryMap.end() && (*iter).first->GetName() != name)
+		iter++;
+	if (iter == InventoryMap.end())
+		return 0;
+	else
+		return (*iter).second;
+}
+
 void Player::UseItem(std::string itemName) {
 	std::map<Item*, int>::iterator it = InventoryMap.begin();
-	while ((*it).first->GetName() != itemName && it != InventoryMap.end())
+	while (it != InventoryMap.end() && (*it).first->GetName() != itemName)
 		it++;
 	// Use item if present. Remove from map if it is the player's last item.
 	if (it == InventoryMap.end())
