@@ -172,7 +172,12 @@ void Player::Tip(Friendlies* npc) {
 
 void Player::Shop(bool& isNight) {
 	int cDirection = 0;
-	InventoryDisplay();
+
+	std::cout << "(H)ealth Potion: " << AmountofItem("(H)ealth Potion") << std::endl;
+	std::cout << "(M)ajor Health Potion: " << AmountofItem("(M)ajor Health Potion") << std::endl;
+	std::cout << "(S)pell Potion: " << AmountofItem("(S)pell Potion") << std::endl;
+	std::cout << "Your money: " << m_Money << std::endl;
+
 	std::cout << "What would you like to buy?";
 	//Empty pointers that get Items.
 	HealthPotion* healthPotion;
@@ -201,18 +206,21 @@ void Player::Shop(bool& isNight) {
 		if (SpendMoney(1)) {
 			healthPotion = new HealthPotion;
 			Additem(healthPotion);
+			system("cls");
 		}
 		break;
 	case 109:
 		if (SpendMoney(2)) {
 			majorHealthPotion = new MajorHealthPotion;
 			Additem(majorHealthPotion);
+			system("cls");
 		}
 		break;
 	case 115:
 		if (SpendMoney(1)) {
 			SpellPotion* spellPotion = new SpellPotion;
 			Additem(spellPotion);
+			system("cls");
 		}
 		break;
 	}
