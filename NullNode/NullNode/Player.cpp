@@ -4,7 +4,7 @@
 //November 17: Added spells
 
 #include "Player.h"
-
+#include <memory>
 
 Player::Player() {
 	//Set all first level stats
@@ -21,7 +21,7 @@ Player::Player() {
 	m_Position.iY = 0;
 	//Currencies
 	m_EnemiesKilled = 0;
-	m_Money = 0;
+	m_Money = 3;
 	m_Experience = 20;
 	m_Name = "Player";
 	InventoryCreate();
@@ -174,11 +174,12 @@ void Player::Shop(bool& isNight) {
 	int cDirection = 0;
 	InventoryDisplay();
 	std::cout << "What would you like to buy?";
-
+	//Empty pointers that get Items.
+	HealthPotion* healthPotion;
+	SpellPotion* spellPotion;
+	MajorHealthPotion* majorHealthPotion;
 	
-	
-	
-
+	//Player input to buy or move from store.
 	switch (cDirection = _getch()) {
 	case 72:	//Up Arrow
 		if (m_Position.iX > 0)
@@ -198,13 +199,13 @@ void Player::Shop(bool& isNight) {
 		break;
 	case 104:
 		if (SpendMoney(1)) {
-			HealthPotion* healthPotion = new HealthPotion;
+			healthPotion = new HealthPotion;
 			Additem(healthPotion);
 		}
 		break;
 	case 109:
 		if (SpendMoney(2)) {
-			MajorHealthPotion* majorHealthPotion = new MajorHealthPotion;
+			majorHealthPotion = new MajorHealthPotion;
 			Additem(majorHealthPotion);
 		}
 		break;

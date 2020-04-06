@@ -62,7 +62,7 @@ public:
 	Node* DungeonMove(Node* position, bool &hubGameState);
 	
 	//Inventory
-	void Additem(Item*item);
+	void Additem(Item* item);
 	void UseItem(std::string itemName);
 	void InventoryDisplay();
 	void InventoryCreate();

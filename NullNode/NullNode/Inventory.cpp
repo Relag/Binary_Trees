@@ -14,13 +14,14 @@ void Player::InventoryCreate() {
 }
 
 void Player::Additem(Item* item) {
+	
 	std::map<Item*, int>::iterator it = InventoryMap.begin();
 	//Move the iterator to item positon or end of the map.
-	while ((*it).first->GetName() != item->GetName() && it != InventoryMap.end()) 
+	while (it != InventoryMap.end() && (*it).first->GetName() != item->GetName())
 		it++;
 	//If iterator is at end of map add the item as a new item, otherwise iterate the item number.
 	if (it == InventoryMap.end())
-		InventoryMap.emplace(item, 1);
+		InventoryMap.emplace(item->Copy(), 1);
 	else {
 		(*it).second++;
 	}
