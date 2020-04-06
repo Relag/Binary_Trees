@@ -53,12 +53,15 @@ void Game::Hub(bool& inHub, Player* player, Busker* busker, GateKeeper* gateKeep
 	//Check for player position against set locations
 	if (player->GetPosition().iX == 5 && player->GetPosition().iY == 0)
 		player->Home(isNight);
-	if (player->GetPosition().iX == busker->GetPosition().iX && player->GetPosition().iY == busker->GetPosition().iY && !isNight) {
+	while (player->GetPosition().iX == busker->GetPosition().iX && player->GetPosition().iY == busker->GetPosition().iY && !isNight) {
+		Render(busker, player);
 		std::cout << busker->GetDescription();
 		player->Tip(busker);
 	}
-	if (player->GetPosition().iX == 4 && player->GetPosition().iY == 4)
+	while (player->GetPosition().iX == 4 && player->GetPosition().iY == 4) {
+		Render(busker, player);
 		player->Shop(isNight);
+	}
 	if (player->GetPosition().iX == gateKeeper->GetPosition().iX && player->GetPosition().iY == gateKeeper->GetPosition().iY) {
 		std::cout << gateKeeper->GetDescription();
 		gateKeeper->Talk(isNight, inHub, player);
