@@ -1,4 +1,7 @@
 #pragma once
+#include <iostream>
+#include <string>
+
 class Fighter
 {
 private:
@@ -13,6 +16,15 @@ private:
 		int m_Level;
 	}m_Stats;
 
+	std::string m_Name;
 
+	
+
+public:
+	std::string GetName() { return m_Name; }
+	void Attack(Fighter* target);
+	void GetHit(int damage);
+	void DisplayStats();
+	bool IsAlive() { return m_Stats.m_Health > 0; }
 };
 
