@@ -4,7 +4,7 @@
 
 class Fighter
 {
-private:
+protected:
 	struct Stats
 	{
 		int m_Strength;
