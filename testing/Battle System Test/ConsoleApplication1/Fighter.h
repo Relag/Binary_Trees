@@ -25,6 +25,7 @@ public:
 	void Attack(Fighter* target);
 	void GetHit(int damage);
 	void DisplayStats();
+	Stats GetStats() { return m_Stats; }
 	bool IsAlive() { return m_Stats.m_Health > 0; }
 };
 
