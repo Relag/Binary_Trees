@@ -29,5 +29,7 @@ public:
 	Stats GetStats() { return m_Stats; }
 	bool IsAlive() { return m_Stats.m_Health > 0; }
 	bool GetIsFoe() { return isFoe; }
+
+	~Fighter();
 };
 

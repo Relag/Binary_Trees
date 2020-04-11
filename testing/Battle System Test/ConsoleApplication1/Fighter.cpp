@@ -12,3 +12,7 @@ void Fighter::GetHit(int damage) {
 	m_Stats.m_Health -= damage;
 	std::cout << m_Name << " took " << damage << " points of damage!\n";
 }
+
+Fighter::~Fighter() {
+	std::cout << std::endl << m_Name << " dies. \n\n";
+}
