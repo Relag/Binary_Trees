@@ -9,6 +9,7 @@ Hero::Hero() {
 	m_Stats.m_Strength = 4 + (rand() % 2);
 	m_Stats.m_Health = m_Stats.m_MaxHealth;
 	m_Name = "Hero";
+	isFoe = false;
 }
 
 void Hero::heal(Hero* ally) {

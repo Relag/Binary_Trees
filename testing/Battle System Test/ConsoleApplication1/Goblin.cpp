@@ -7,6 +7,7 @@ Goblin::Goblin() {
 	m_Stats.m_Strength = 2 + (rand() % 5);
 	m_Stats.m_Health = m_Stats.m_MaxHealth;
 	m_Name = "Goblin";
+	isFoe = true;
 }
 
 void Goblin::Enrage(Goblin* ally) {

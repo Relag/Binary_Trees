@@ -49,9 +49,32 @@ int main()
         qFighters.push(vFighters[i]);
     }
 
-    while (!qFighters.empty()) {
+    for (int i = 0; i < 8; i++) {
         std::cout << qFighters.front()->GetName() << ": " << qFighters.front()->GetStats().m_Agility << std::endl;
+        qFighters.push(qFighters.front());
         qFighters.pop();
+    }
+
+    std::vector<Hero*> vHeroes;
+    vHeroes.push_back(hero1);
+    vHeroes.push_back(hero2);
+
+    std::vector<Goblin*> vVillians;
+    vVillians.push_back(goblin1);
+    vVillians.push_back(goblin2);
+
+    while ((vVillians[0]->IsAlive() && vVillians[1]->IsAlive())
+        && vHeroes[0]->IsAlive() && vHeroes[1]->IsAlive()) {
+        if (qFighters.front()->GetIsFoe()) {
+            qFighters.front()->Attack(vHeroes[rand() % vHeroes.size()]);
+            qFighters.push(qFighters.front());
+            qFighters.pop();
+        }
+        else {
+            qFighters.front()->Attack(vVillians[rand() % vVillians.size()]);
+            qFighters.push(qFighters.front());
+            qFighters.pop();
+        }
     }
 }
 
