@@ -4,7 +4,7 @@
 
 void Fighter::Attack(Fighter* target) {
 	int damage = m_Stats.m_Strength + rand() % 6 + 1;
-	std::cout << m_Name << " attacks " << target->GetName() << std::endl;
+	std::cout << std::endl << m_Name << " attacks " << target->GetName() << std::endl;
 	target->GetHit(damage);
 }
 

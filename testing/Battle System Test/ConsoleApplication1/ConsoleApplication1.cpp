@@ -7,6 +7,7 @@
 #include "Goblin.h"
 #include <queue>
 #include <vector>
+#include <Windows.h>
 
 bool FighterSort(Fighter* a, Fighter* b) {
     return a->GetStats().m_Agility > b->GetStats().m_Agility;
@@ -72,6 +73,8 @@ int main()
     int randNum;
 
     while (!vVillians.empty() && !vHeroes.empty()) {
+       
+
         if (qFighters.front()->IsAlive() && qFighters.front()->GetIsFoe()) {
             randNum = rand() % vHeroes.size();
             qFighters.front()->Attack(vHeroes[randNum]);
@@ -89,10 +92,18 @@ int main()
             qFighters.pop();
         }
 
+        Sleep(1500);
+
+        system("cls");
+
         vVillians.clear();
         vHeroes.clear();
 
         for (int i = 0; i < qFighters.size(); i++) {
+
+            std::cout << qFighters.front()->GetName() << ": " << qFighters.front()->GetStats().m_Health 
+                << "/" << qFighters.front()->GetStats().m_MaxHealth << std::endl;
+
             if (qFighters.front()->GetIsFoe())
                 vVillians.push_back(qFighters.front());
             else
