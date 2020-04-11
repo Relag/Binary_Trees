@@ -42,6 +42,17 @@ int main()
     for (std::vector<Fighter*>::iterator iter = vFighters.begin(); iter != vFighters.end(); iter++) {
         std::cout << (*iter)->GetName() << ": " << (*iter)->GetStats().m_Agility << std::endl;
     }
+
+    std::cout << std::endl;
+
+    for (int i = 0; i < vFighters.size(); i++) {
+        qFighters.push(vFighters[i]);
+    }
+
+    while (!qFighters.empty()) {
+        std::cout << qFighters.front()->GetName() << ": " << qFighters.front()->GetStats().m_Agility << std::endl;
+        qFighters.pop();
+    }
 }
 
 
