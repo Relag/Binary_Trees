@@ -9,7 +9,7 @@
 #include <vector>
 
 bool FighterSort(Fighter* a, Fighter* b) {
-    return a->GetStats().m_Agility < b->GetStats().m_Agility;
+    return a->GetStats().m_Agility > b->GetStats().m_Agility;
 }
 
 int main()
@@ -61,23 +61,43 @@ int main()
     }
     std::cout << std::endl;
 
-    std::vector<Hero*> vHeroes;
+    std::vector<Fighter*> vHeroes;
     vHeroes.push_back(hero1);
     vHeroes.push_back(hero2);
 
-    std::vector<Goblin*> vVillians;
+    std::vector<Fighter*> vVillians;
     vVillians.push_back(goblin1);
     vVillians.push_back(goblin2);
 
-    while ((vVillians[0]->IsAlive() && vVillians[1]->IsAlive())
-        && vHeroes[0]->IsAlive() && vHeroes[1]->IsAlive()) {
+    int randNum;
+
+    while (!vVillians.empty() && !vHeroes.empty()) {
         if (qFighters.front()->IsAlive() && qFighters.front()->GetIsFoe()) {
-            qFighters.front()->Attack(vHeroes[rand() % vHeroes.size()]);
+            randNum = rand() % vHeroes.size();
+            qFighters.front()->Attack(vHeroes[randNum]);
             qFighters.push(qFighters.front());
             qFighters.pop();
         }
         else if (qFighters.front()->IsAlive()) {
-            qFighters.front()->Attack(vVillians[rand() % vVillians.size()]);
+            randNum = rand() % vVillians.size();
+            qFighters.front()->Attack(vVillians[randNum]);
+            qFighters.push(qFighters.front());
+            qFighters.pop();
+        }
+        else {
+            delete qFighters.front();
+            qFighters.pop();
+        }
+
+        vVillians.clear();
+        vHeroes.clear();
+
+        for (int i = 0; i < qFighters.size(); i++) {
+            if (qFighters.front()->GetIsFoe())
+                vVillians.push_back(qFighters.front());
+            else
+                vHeroes.push_back(qFighters.front());
+            
             qFighters.push(qFighters.front());
             qFighters.pop();
         }
