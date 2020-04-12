@@ -2,10 +2,11 @@
 #include <random>
 #include <ctime>
 
-void Fighter::Attack(Fighter* target) {
+void Fighter::Attack(std::vector<Fighter*> target) {
 	int damage = m_Stats.m_Strength + rand() % 6 + 1;
-	std::cout << std::endl << m_Name << " attacks " << target->GetName() << std::endl;
-	target->GetHit(damage);
+	int randNum = rand() % target.size();
+	std::cout << std::endl << m_Name << " attacks " << target[randNum]->GetName() << std::endl;
+	target[randNum]->GetHit(damage);
 }
 
 void Fighter::GetHit(int damage) {

@@ -23,7 +23,7 @@ protected:
 
 public:
 	std::string GetName() { return m_Name; }
-	void Attack(Fighter* target);
+	void Attack(std::vector<Fighter*> target);
 	void GetHit(int damage);
 	void DisplayStats();
 	void setName(std::string name) { m_Name = name; }
