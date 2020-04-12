@@ -151,11 +151,13 @@
     <ClCompile Include="Fighter.cpp" />
     <ClCompile Include="Goblin.cpp" />
     <ClCompile Include="Hero.cpp" />
+    <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Fighter.h" />
     <ClInclude Include="Goblin.h" />
     <ClInclude Include="Hero.h" />
+    <ClInclude Include="Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

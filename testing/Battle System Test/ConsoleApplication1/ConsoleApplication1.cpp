@@ -5,6 +5,7 @@
 #include <ctime>
 #include "Hero.h"
 #include "Goblin.h"
+#include "Player.h"
 #include <queue>
 #include <vector>
 #include <Windows.h>
@@ -23,7 +24,7 @@ int main()
     //Add ability to play as Hero 1
     //Create Act function in fighter. Keep turn logic inside classes. Pass in vector to keep turn order queue intact. 
 
-    Hero* hero1 = new Hero;
+    Player* player = new Player;
     Hero* hero2 = new Hero;
     Goblin* goblin1 = new Goblin;
     Goblin* goblin2 = new Goblin;
@@ -32,12 +33,11 @@ int main()
     std::queue<Fighter*> qFighters;
     std::vector<Fighter*> vFighters;
 
-    vFighters.push_back(hero1);
+    vFighters.push_back(player);
     vFighters.push_back(hero2);
     vFighters.push_back(goblin1);
     vFighters.push_back(goblin2);
 
-    hero1->setName("Hero1");
     hero2->setName("Hero2");
     goblin1->setName("Goblin1");
     goblin2->setName("Goblin2");
@@ -68,7 +68,7 @@ int main()
     std::cout << std::endl;
 
     std::vector<Fighter*> vHeroes;
-    vHeroes.push_back(hero1);
+    vHeroes.push_back(player);
     vHeroes.push_back(hero2);
 
     std::vector<Fighter*> vVillians;
