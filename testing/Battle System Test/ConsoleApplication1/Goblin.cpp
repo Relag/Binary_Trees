@@ -8,8 +8,25 @@ Goblin::Goblin() {
 	m_Stats.m_Health = m_Stats.m_MaxHealth;
 	m_Name = "Goblin";
 	isFoe = true;
+	TurnsSincePowerUp = 0;
 }
 
 void Goblin::Enrage(Goblin* ally) {
 	//placeholder to strngthen an ally's attack
+}
+
+void Goblin::Act(std::vector<Fighter*> Fighters) {
+	if (TurnsSincePowerUp > 0) {
+		TurnsSincePowerUp--;
+		Attack();
+	}
+}
+
+void Goblin::PowerUp() {
+	m_Stats.m_Strength += POWER_UP_BY;
+	TurnsSincePowerUp = 2;
+}
+
+void Goblin::DePowerUp() {
+	m_Stats.m_Strength -= POWER_UP_BY;
 }
