@@ -11,14 +11,28 @@ Goblin::Goblin() {
 	TurnsSincePowerUp = 0;
 }
 
-void Goblin::Enrage(Goblin* ally) {
-	//placeholder to strngthen an ally's attack
+void Goblin::Enrage(std::vector<Fighter*> ally) {
+	//placeholder to strengthen an ally's attack
+	int randNum = rand() % ally.size();
+	//Will only enrage self is ally is dead or already enraged.
+	do {
+		randNum = rand() % ally.size();
+	} while (ally[randNum]->isEnraged());
+	ally[randNum]->PowerUp();
+	std::cout << std::endl << ally[randNum]->GetName() << " became enraged!" << std::endl;
 }
 
 void Goblin::Act(std::vector<Fighter*> Allies, std::vector<Fighter*> Enemies) {
+	int randNum = (rand() % 10) + 1;
 	if (TurnsSincePowerUp > 0) {
 		TurnsSincePowerUp--;
-		Attack();
+		Attack(Enemies);
+	}
+	else if (randNum < 9) {
+		Enrage(Allies);
+	}
+	else {
+		Attack(Enemies);
 	}
 }
 

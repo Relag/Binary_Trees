@@ -20,7 +20,7 @@ protected:
 	std::string m_Name;
 	bool isFoe;
 	virtual void Act(std::vector<Fighter*> Allies, std::vector<Fighter*> Enemies) = 0;
-
+	
 public:
 	std::string GetName() { return m_Name; }
 	void Attack(std::vector<Fighter*> target);
@@ -30,6 +30,8 @@ public:
 	Stats GetStats() { return m_Stats; }
 	bool IsAlive() { return m_Stats.m_Health > 0; }
 	bool GetIsFoe() { return isFoe; }
+	bool isEnraged();
+	void PowerUp();
 
 	~Fighter();
 };

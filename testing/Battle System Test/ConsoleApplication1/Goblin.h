@@ -10,8 +10,9 @@ private:
 	void DePowerUp();
 public:
 	Goblin();
-	void Enrage(Goblin* ally);
+	void Enrage(std::vector<Fighter*> ally);
 	void Act(std::vector<Fighter*> Allies, std::vector<Fighter*> Enemies);
 	void PowerUp();
+	bool isEnraged() { return TurnsSincePowerUp > 0; }
 };
 
