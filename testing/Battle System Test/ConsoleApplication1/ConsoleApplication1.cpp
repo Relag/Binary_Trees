@@ -21,6 +21,7 @@ int main()
     //TODO:
     //Add randomization so fighters use their special moves.
     //Add ability to playe as Hero 1
+    //Create Act function in fighter. Keep turn logic inside classes. Pass in vector to keep turn order queue intact. 
 
     Hero* hero1 = new Hero;
     Hero* hero2 = new Hero;
@@ -102,6 +103,7 @@ int main()
 
         vVillians.clear();
         vHeroes.clear();
+        vFighters.clear();
 
         for (int i = 0; i < qFighters.size(); i++) {
 
@@ -113,6 +115,7 @@ int main()
             else
                 vHeroes.push_back(qFighters.front());
             
+            vFighters.push_back(qFighters.front());
             qFighters.push(qFighters.front());
             qFighters.pop();
         }
