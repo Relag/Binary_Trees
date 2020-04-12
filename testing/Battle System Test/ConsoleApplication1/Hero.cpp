@@ -18,5 +18,5 @@ void Hero::heal(Hero* ally) {
 }
 
 void Hero::Act(std::vector<Fighter*> Allies, std::vector<Fighter*> Enemies) {
-
+	Attack(Enemies);
 }
