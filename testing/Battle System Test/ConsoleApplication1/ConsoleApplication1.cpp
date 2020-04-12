@@ -81,14 +81,12 @@ int main()
        
 
         if (qFighters.front()->IsAlive() && qFighters.front()->GetIsFoe()) {
-            randNum = rand() % vHeroes.size();
-            qFighters.front()->Attack(vHeroes[randNum]);
+            qFighters.front()->Act(vVillians, vHeroes);
             qFighters.push(qFighters.front());
             qFighters.pop();
         }
         else if (qFighters.front()->IsAlive()) {
-            randNum = rand() % vVillians.size();
-            qFighters.front()->Attack(vVillians[randNum]);
+            qFighters.front()->Act(vHeroes, vVillians);
             qFighters.push(qFighters.front());
             qFighters.pop();
         }
