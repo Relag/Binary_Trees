@@ -16,3 +16,7 @@ void Hero::heal(Hero* ally) {
 	//placeholder to heal an ally.
 
 }
+
+void Hero::Act(std::vector<Fighter*> Allies, std::vector<Fighter*> Enemies) {
+
+}

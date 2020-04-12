@@ -11,7 +11,7 @@ private:
 public:
 	Goblin();
 	void Enrage(Goblin* ally);
-	void Act(std::vector<Fighter*> Fighters);
+	void Act(std::vector<Fighter*> Allies, std::vector<Fighter*> Enemies);
 	void PowerUp();
 };
 

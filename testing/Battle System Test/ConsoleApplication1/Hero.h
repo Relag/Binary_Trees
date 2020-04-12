@@ -8,5 +8,6 @@ class Hero :
 public:
 	Hero();
 	void heal(Hero* ally);
+	void Act(std::vector<Fighter*> Allies, std::vector<Fighter*> Enemies);
 };
 

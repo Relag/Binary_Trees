@@ -15,7 +15,7 @@ void Goblin::Enrage(Goblin* ally) {
 	//placeholder to strngthen an ally's attack
 }
 
-void Goblin::Act(std::vector<Fighter*> Fighters) {
+void Goblin::Act(std::vector<Fighter*> Allies, std::vector<Fighter*> Enemies) {
 	if (TurnsSincePowerUp > 0) {
 		TurnsSincePowerUp--;
 		Attack();

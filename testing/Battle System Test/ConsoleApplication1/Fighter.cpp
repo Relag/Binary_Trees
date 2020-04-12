@@ -16,3 +16,4 @@ void Fighter::GetHit(int damage) {
 Fighter::~Fighter() {
 	std::cout << std::endl << m_Name << " dies. \n\n";
 }
+
