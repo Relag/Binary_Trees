@@ -3,7 +3,7 @@
 
 Goblin::Goblin() {
 	m_Stats.m_Agility = 3 + (rand() % 3);
-	m_Stats.m_MaxHealth = 10 + (rand() % 5);
+	m_Stats.m_MaxHealth = 11 + (rand() % 5);
 	m_Stats.m_Strength = 2 + (rand() % 6);
 	m_Stats.m_Health = m_Stats.m_MaxHealth;
 	m_Name = "Goblin";
@@ -28,7 +28,7 @@ void Goblin::Act(std::vector<Fighter*> Allies, std::vector<Fighter*> Enemies) {
 		TurnsSincePowerUp--;
 		Attack(Enemies);
 	}
-	else if (randNum < 9) {
+	else if (randNum > 8) {
 		Enrage(Allies);
 	}
 	else {
