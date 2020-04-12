@@ -14,6 +14,15 @@ void Fighter::GetHit(int damage) {
 	std::cout << m_Name << " took " << damage << " points of damage!\n";
 }
 
+bool Fighter::isEnraged()
+{
+	return false;
+}
+
+void Fighter::PowerUp()
+{
+}
+
 Fighter::~Fighter() {
 	std::cout << std::endl << m_Name << " dies. \n\n";
 }

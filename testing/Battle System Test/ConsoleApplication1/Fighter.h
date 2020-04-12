@@ -30,8 +30,8 @@ public:
 	Stats GetStats() { return m_Stats; }
 	bool IsAlive() { return m_Stats.m_Health > 0; }
 	bool GetIsFoe() { return isFoe; }
-	bool isEnraged();
-	void PowerUp();
+	virtual bool isEnraged();
+	virtual void PowerUp();
 	virtual void Act(std::vector<Fighter*> Allies, std::vector<Fighter*> Enemies) = 0;
 
 	~Fighter();
