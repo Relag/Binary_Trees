@@ -19,8 +19,8 @@ int main()
     //Handle cleanup at the end. Check to see if fighter is alive before attacking and readding to list. DONE: April 10 2020
     //Should I have an enum like Friend or Foe? This determines who to target. Bool might suffice. DONE: April 10 2020
     //TODO:
-    //Add randomization so fighters use their special moves.
-    //Add ability to playe as Hero 1
+    //Add randomization so fighters use their special moves. DONE FOR GOBLIN: April 11, 2020
+    //Add ability to play as Hero 1
     //Create Act function in fighter. Keep turn logic inside classes. Pass in vector to keep turn order queue intact. 
 
     Hero* hero1 = new Hero;
