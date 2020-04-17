@@ -9,7 +9,7 @@ template <typename T>
 //Pass in pre-created iterator and have a separate switch statement to interpret the choice?
 void Menu(std::vector<T> choices, std::string intro = "") {
 	std::cout << intro;
-	std::vector<std::string>::iterator iter = choices.begin();
+	typename std::vector<T>::iterator iter = choices.begin();
 	int cDirection = 0;
 	while (cDirection != '\r'){
 		cDirection = 0;
@@ -42,9 +42,15 @@ int main() {
 	menu.push_back("Goodbye");
 	menu.push_back("Au Revoir");
 
-	while (_kbhit())
-		_getche();
 	Menu(menu);
+
+	std::vector<int> iMenu;
+
+	iMenu.push_back(1);
+	iMenu.push_back(2);
+	iMenu.push_back(3);
+
+	Menu(iMenu);
 
 	system("PAUSE");
 
