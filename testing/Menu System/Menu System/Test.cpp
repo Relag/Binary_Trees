@@ -1,6 +1,11 @@
 #include "Test.h"
 
- std::string Test::operator<<(const Test& test)
+std::ostream& operator<<(std::ostream& os, const Test& test)
 {
-	return name;
+    os << test.name;
+    return os;
 }
+
+ bool Test::operator==(const Test& test) {
+     return name == test.name;
+ }
