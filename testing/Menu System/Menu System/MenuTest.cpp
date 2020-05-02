@@ -8,9 +8,9 @@
 template <typename T>
 //May create as a singleton later.
 //Pass in pre-created iterator and have a separate switch statement to interpret the choice?
-void Menu(std::vector<T*>& choices, std::string intro = "") {
+void Menu(std::vector<T*>& choices, typename std::vector<T*>::iterator& iter, std::string intro = "") {
 	std::cout << intro;
-	typename std::vector<T*>::iterator iter = choices.begin();
+	iter = choices.begin();
 	int cDirection = 0;
 	while (cDirection != '\r'){
 		cDirection = 0;
@@ -37,7 +37,7 @@ int main() {
 	std::cout << "HI\n\n";
 
 	std::vector<std::string*> menu;
-
+	std::vector<std::string*>::iterator iter;
 	std::string string1 = "Hello";
 	std::string string2 = "Bonjour";
 	std::string string3 = "Goodbye";
@@ -60,9 +60,10 @@ int main() {
 	menu.push_back(p_string4);
 	
 
-	Menu(menu);
+	Menu(menu, iter);
 
 	std::vector<Test*> testMenu;
+	std::vector<Test*>::iterator iterTest;
 
 	Test* test1 = new Test;
 	Test* test2 = new Test;
@@ -84,7 +85,9 @@ int main() {
 	testMenu.push_back(test2);
 	testMenu.push_back(test3);
 
-	Menu(testMenu);
+	Menu(testMenu, iterTest);
+
+	(*iterTest)->speak();
 
 	system("PAUSE");
 
