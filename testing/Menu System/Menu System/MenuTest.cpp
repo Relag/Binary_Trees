@@ -8,9 +8,9 @@
 template <typename T>
 //May create as a singleton later.
 //Pass in pre-created iterator and have a separate switch statement to interpret the choice?
-void Menu(std::vector<T*>& choices, typename std::vector<T*>::iterator& iter, std::string intro = "") {
+typename std::vector<T*>::iterator Menu(std::vector<T*>& choices, std::string intro = "") {
 	std::cout << intro;
-	iter = choices.begin();
+	typename std::vector<T*>::iterator iter = choices.begin();
 	int cDirection = 0;
 	while (cDirection != '\r'){
 		cDirection = 0;
@@ -28,9 +28,33 @@ void Menu(std::vector<T*>& choices, typename std::vector<T*>::iterator& iter, st
 				iter--;
 		
 		system("CLS");
-		
 	}
-}
+	return iter;
+}/*
+template <typename T>
+void Menu(std::vector<T*>& choices, typename std::vector<T*>::iterator& iter, std::string intro = "") {
+	std::cout << intro;
+	iter = choices.begin();
+	int cDirection = 0;
+	while (cDirection != '\r') {
+		cDirection = 0;
+		for (int i = 0; i < choices.size(); i++) {
+			if ((**iter) == (*choices[i])) {
+				std::cout << "-->";
+			}
+			std::cout << "\t" << (*choices[i]) << std::endl;
+		}
+		Sleep(50);
+		cDirection = _getch();
+		if (cDirection == 80 && iter != choices.end() - 1)
+			iter++;
+		else if (cDirection == 72 && iter != choices.begin())
+			iter--;
+
+		system("CLS");
+
+	}
+}*/
 
 int main() {
 
@@ -60,7 +84,7 @@ int main() {
 	menu.push_back(p_string4);
 	
 
-	Menu(menu, iter);
+	iter = Menu(menu);
 
 	std::vector<Test*> testMenu;
 	std::vector<Test*>::iterator iterTest;
@@ -85,7 +109,7 @@ int main() {
 	testMenu.push_back(test2);
 	testMenu.push_back(test3);
 
-	Menu(testMenu, iterTest);
+	iterTest = Menu(testMenu);
 
 	(*iterTest)->speak();
 
