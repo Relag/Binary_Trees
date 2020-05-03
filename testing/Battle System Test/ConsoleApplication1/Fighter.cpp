@@ -27,3 +27,12 @@ Fighter::~Fighter() {
 	std::cout << std::endl << m_Name << " dies. \n\n";
 }
 
+std::ostream& operator<<(std::ostream& os, const Fighter& fighter) {
+	os << fighter.m_Name;
+	return os;
+}
+
+bool Fighter::operator==(const Fighter& fighter) {
+	return m_Name == fighter.m_Name;
+}
+

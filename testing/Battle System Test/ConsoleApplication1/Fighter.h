@@ -33,7 +33,9 @@ public:
 	virtual bool isEnraged();
 	virtual void PowerUp();
 	virtual void Act(std::vector<Fighter*> Allies, std::vector<Fighter*> Enemies) = 0;
-
+	friend std::ostream& operator<<(std::ostream& os, const Fighter& fighter);
+	bool operator==(const Fighter& fighter);
+		 
 	~Fighter();
 };
 
