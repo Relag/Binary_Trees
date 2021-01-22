@@ -91,11 +91,11 @@ int main()
 
 
 
-	/*for (int i = 0; i < 8; i++) {
+	for (int i = 0; i < 8; i++) {
 		MInventory.find("Health Potion")->second.first->Use(MInventory);
-		MInventory.find("Health Potion")->second->first->Use(MInventory);
-		std::cout << MInventory.find()->first->GetName() << ": " << MInventory.find(healthPotion)->second << std::endl;
-	}*/
+
+		std::cout << MInventory.find("Health Potion")->second.first->GetName() << ": " << MInventory.find("Health Potion")->second.second << std::endl;
+	}
 
 	/*std::cout << std::endl;
 	for (int i = 0; i < 5; i++) {
