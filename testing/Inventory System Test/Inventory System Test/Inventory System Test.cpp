@@ -1,5 +1,7 @@
 // Inventory System Test.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //November 10, 2019: Gonna go with map for this one. First value Item*, second value int number of item.
+//March 17,2021: Make Item.Use a bool. If it returns false (meaning there is none left), Have InventoryManager call map.erase on the iterator
+//After map.find check if iterator is at end before calling Item.Use
 
 #include <iostream>
 #include <vector>
